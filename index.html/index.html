@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Be a Perfect Savarna™</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary: #8e44ad;
+            --secondary: #2c3e50;
+            --accent: #e74c3c;
+            --light: #f9f9f9;
+            --dark: #222;
+            --gray: #95a5a6;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 80px 0;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        .hero p {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: var(--secondary);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Steps Section */
+        .steps-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent);
+            margin: 15px auto;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .step-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            font-size: 1.8rem;
+            font-weight: bold;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .step-content {
+            padding: 25px;
+        }
+        
+        .step-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .step-content p {
+            color: var(--gray);
+            margin-bottom: 15px;
+        }
+        
+        .step-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        /* Quote Carousel */
+        .quote-section {
+            padding: 80px 0;
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .quote:before, .quote:after {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.5;
+            position: absolute;
+        }
+        
+        .quote:before {
+            top: -20px;
+            left: -30px;
+        }
+        
+        .quote:after {
+            bottom: -40px;
+            right: -30px;
+        }
+        
+        .quote-author {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+        
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .faq-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .faq-question {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .faq-answer {
+            font-size: 1.1rem;
+            color: var(--secondary);
+        }
+        
+        /* Disclaimer */
+        .disclaimer {
+            padding: 40px 0;
+            background-color: #f1f1f1;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        .footer-quote {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .footer-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .quote {
+                font-size: 1.4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .step-content h3 {
+                font-size: 1.3rem;
+            }
+            
+            .faq-question {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">How to Be a Perfect Savarna™</div>
+            <div class="tagline">Because caste doesn't exist... unless you're benefiting from it</div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Master the Art of Caste Privilege</h1>
+            <p>A satirical guide to maintaining Savarna supremacy while pretending caste discrimination ended centuries ago</p>
+            <a href="#steps" class="cta-button">Begin Your Journey</a>
+        </div>
+    </section>
+    
+    <section id="steps" class="steps-section">
+        <div class="container">
+            <h2 class="section-title">The 5-Step Program</h2>
+            
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card">
+                    <div class="step-number">Step 1</div>
+                    <div class="step-content">
+                        <div class="step-icon">🙈</div>
+                        <h3>Deny Caste Exists</h3>
+                        <p>"Caste? That's ancient history! We're all equal now." Perfect your confused look when someone mentions caste discrimination. Bonus points for claiming "reverse casteism."</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="step-card">
+                    <div class="step-number">Step 2</div>
+                    <div class="step-content">
+                        <div class="step-icon">🏆</div>
+                        <h3>Complain About 'Merit'</h3>
+                        <p>When someone from a marginalized community succeeds, immediately question their qualifications. Remember: Your success is always merit-based, theirs is always quota-based.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="step-card">
+                    <div class="step-number">Step 3</div>
+                    <div class="step-content">
+                        <div class="step-icon">🚪</div>
+                        <h3>Gatekeep Opportunities</h3>
+                        <p>Make sure your social and professional circles remain "comfortable." Use coded language like "cultural fit" to maintain the status quo while appearing progressive.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="step-card">
+                    <div class="step-number">Step 4</div>
+                    <div class="step-content">
+                        <div class="step-icon">✊</div>
+                        <h3>Token Allyship</h3>
+                        <p>Share one anti-caste post per year, preferably on Ambedkar Jayanti. Make sure it doesn't actually challenge any power structures or make your relatives uncomfortable.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 5 -->
+                <div class="step-card">
+                    <div class="step-number">Step 5</div>
+                    <div class="step-content">
+                        <div class="step-icon">📱</div>
+                        <h3>Use Ambedkar Only for Instagram Stories</h3>
+                        <p>Quote Dr. Ambedkar selectively, ignoring his radical critiques of Brahminism. Bonus: Share his photo while opposing reservation policies he fought for.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="quote-section">
+        <div class="container">
+            <div class="quote-container">
+                <div class="quote">Reservation ruined my chance at nepotism</div>
+                <div class="quote-author">- Every Savarna Uncle at Family Gatherings</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Avoided Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">"But what about merit?"</div>
+                <div class="faq-answer">Merit is when we win. Reservation is when we lose. Simple!</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">"My family never practiced caste discrimination!"</div>
+                <div class="faq-answer">Of course not! Your ancestors just coincidentally owned all the land, controlled all the temples, and monopolized education for centuries.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">"Why bring up caste now? We should move on!"</div>
+                <div class="faq-answer">Yes, let's move on from discussing caste right after centuries of oppression, just as the privileged group starts feeling slightly uncomfortable.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">"But I have Dalit friends!"</div>
+                <div class="faq-answer">Ah, the classic "I'm not racist, I have Black friends" of caste discourse. Bonus points if they're your domestic help.</div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="disclaimer">
+        <div class="container">
+            <p><strong>Disclaimer:</strong> This is a satirical website meant to critique caste privilege through humor. It is inspired by Ambedkarite thought and intended to spark reflection about ongoing caste-based inequalities in India. No upper-caste individuals were harmed in the making of this website (though some egos may be bruised).</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-quote">"Caste is not just a division of labor, it is a division of laborers."</div>
+            <div class="footer-note">- Dr. B.R. Ambedkar | This site exists because caste still does.</div>
+        </div>
+    </footer>
+</body>
+</html>
